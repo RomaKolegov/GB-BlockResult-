@@ -14,3 +14,19 @@ int GetArrayLengthFromUser(string message)
     int length = Convert.ToInt32(Console.ReadLine());
     return length;
 }
+
+string[] GenerateArrayFromUser(int length)
+{
+    string [] array = new string [length];
+    int count = 1;
+    for (int i = 0; i < length; i++)
+    {
+        Console.WriteLine($"Введите значение для элемента массива {count++}");
+        array[i] = Console.ReadLine();
+        if (array[i] == string.Empty)
+            {
+                array[i] = "-";
+            }
+    }
+    return array;
+}
