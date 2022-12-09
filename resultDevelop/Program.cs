@@ -60,3 +60,27 @@ int NumberOfValuesUpToThreeCharacters(string[] array)
     return count;
 }
 
+string[] ArrayOfDataThreeCharacters(string[] array, int newLength)
+{
+    string [] arrayNew = new string[newLength];
+    int maxLengthChar = 3;
+    int counter = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= maxLengthChar)
+        {
+            arrayNew[counter] = array[i];
+            counter++;
+        }
+    }
+    return arrayNew;
+}
+
+int userLength = GetArrayLengthFromUser("Введите требуемую длину массива");
+string [] array = GenerateArrayFromUser(userLength);
+Console.WriteLine("Сгенерированный массив:");
+PrintArray(array);
+int numbersThreeCharacters = NumberOfValuesUpToThreeCharacters(array);
+string [] newArray = ArrayOfDataThreeCharacters(array, numbersThreeCharacters);
+Console.WriteLine("Полученный массив с элементами из знаков в количестве до 3-х:");
+PrintArray(newArray);
