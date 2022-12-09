@@ -14,34 +14,3 @@ int GetArrayLengthFromUser(string message)
     int length = Convert.ToInt32(Console.ReadLine());
     return length;
 }
-
-string[] GenerateArrayFromUser(int length)
-{
-    string [] array = new string [length];
-    int count = 0;
-    for (int i = 0; i < length; i++)
-    {
-        Console.WriteLine($"Введите значение для индекса массива {count++}");
-        array[i] = Console.ReadLine();
-    }
-    return array;
-}
-
-void PrintArray(string[] array)
-{
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i]);
-        if (i < array.Length - 1)
-        {
-            Console.Write(", ");
-        }
-    }
-    Console.Write("]");
-    Console.WriteLine();
-}
-int userLength = GetArrayLengthFromUser("Введите требуемую длину массива");
-string [] array = GenerateArrayFromUser(userLength);
-Console.WriteLine("Сгенерированный массив:");
-PrintArray(array);
